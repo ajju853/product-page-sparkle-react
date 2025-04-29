@@ -11,7 +11,7 @@ interface CategoryCardProps {
 const CategoryCard: React.FC<CategoryCardProps> = ({ title, image }) => {
   return (
     <Link 
-      to={`/products?category=${title}`} 
+      to={`/categories?category=${title}`} 
       className="group relative overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105"
     >
       <div className="aspect-square bg-gray-100">
@@ -79,6 +79,14 @@ const CategoriesSection: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Browse Categories</h2>
           <p className="text-gray-600 mt-2">Find products by category</p>
+          <div className="mt-4">
+            <Link 
+              to="/categories" 
+              className="inline-flex items-center text-brand-purple hover:underline font-medium"
+            >
+              View All Categories
+            </Link>
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
